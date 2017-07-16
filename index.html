@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css"/>
+    <title>Art Gallery</title>
+</head>
+
+<body>
+  <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.min.js"></script>
+
+  <script type="text/javascript">
+    $(function($){
+      var addToAll = false;
+      var gallery = true;
+      var titlePosition = 'inside';
+      $(addToAll ? 'img' : 'img.fancybox').each(function(){
+   var $this = $(this);
+   var title = $this.attr('title');
+   var src = $this.attr('data-big') || $this.attr('src');
+   var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+            $this.wrap(a);
+        });
+        if (gallery)
+            $('a.fancybox').attr('rel', 'fancyboxgallery');
+        $('a.fancybox').fancybox({
+            titlePosition: titlePosition
+        });
+    });
+    $.noConflict();
+</script>
+
+<div class="gallery-wrapper">
+<h1>Test Gallery</h1>
+	<ul>
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img1.jpg"><img  src="thumbnails/img1.jpg"><h4>Stardust</h4></a></figure>
+		</li>
+
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img2.jpg"><img src="thumbnails/img2.jpg"><h4>Red Forest</h4></a></figure>
+		</li>
+
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img3.jpg"><img src="thumbnails/img3.jpg"><h4>Cliffs</h4></a></figure>
+		</li>
+			<br>
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img4.jpg"><img src="thumbnails/img4.jpg"><h4>Night Ship</h4></a></figure>
+		</li>
+
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img5.jpg"><img src="thumbnails/img5.jpg"><h4>Hidden Valley</h4></a></figure>
+		</li>
+
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img6.jpg"><img src="thumbnails/img6.jpg"><h4>Cool Space</h4></a></figure>
+		</li>
+			<br>
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img7.jpg"><img src="thumbnails/img7.jpg"><h4>Night City</h4></a></figure>
+		</li>
+
+		<li>
+			<figure class="img-wrapper fade"><a class="fancybox" href="images/img8.jpg"><img src="thumbnails/img8.jpg"><h4>Pool Pillars</h4></a></figure>
+		</li>
+
+    <li>
+      <figure class="img-wrapper fade"><a class="fancybox" href="images/img9.jpg"><img src="thumbnails/img9.jpg"><h4>Canyon</h4></a></figure>
+    </li>
+
+    <li>
+      <figure class="img-wrapper fade"><a class="fancybox" href="images/img10.jpg"><img src="thumbnails/img10.jpg"><h4>Metallic Black</h4></a></figure>
+    </li>
+
+    <li>
+      <figure class="img-wrapper fade"><a class="fancybox" href="images/img11.jpg"><img src="thumbnails/img11.jpg"><h4>Woods</h4></a></figure>
+    </li>
+
+
+	</ul>
+</div>
+
+
+<!-- STYLE SECTION -->
+<style type="text/css">
+body {
+  background-color: inherit; /*sets background color */
+	font-family: fantasy;  /* just a custom font */
+}
+
+ul	{
+	list-style-type: none;	/* hiding the bullets from ul */
+}
+
+a:-webkit-any-link {
+  	text-decoration: none;	/* ignoring default link settings */
+}
+
+.fade {
+   opacity: 1;		/* sets default view to a 80% opacity */
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover {
+      opacity: 0.5;	/* sets default view to a 100% opacity when on hover state */
+}
+
+.gallery-wrapper ul li{
+	display: inline-grid;		/* sit wrappers in rows, not column block */
+}
+
+h4 {							/* style the photos titles */
+	text-align: center;
+	font-size: 1em;
+	margin: 0;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: black;
+}
+
+h1 {                                   /* just a main title alignment */
+  font-family: "Big Caslon";
+	padding-left: 7.5em;
+  font-size: 60px;
+  color: grey;
+  text-shadow: 4px 2px black;
+
+}
+
+/* .img-wrapper {                                 /* this will be the wrapping box */
+
+  /* Keep in mind that all thumbnails in the thumbnails folder are 300x240, so
+  changing the below values will only change the size of the borders */
+	width: 300px;
+	height: 220px;
+
+  border: .1em solid #ccc;
+  border-radius: .4em;
+  background-color: #f3f3f3;
+  box-shadow: 0.1em 0.1em 0.5em -0.2em #777;
+  margin: 1em 1em;
+
+	/*
+  border: 0.1em solid #ccc;
+	border-radius: 0.4em;
+	background-color: #f3f3f3;
+	box-shadow: 0.1em 0.1em 0.5em -0.2em #777;
+	margin: 1em 1em;
+  */
+} */
+
+img {
+	border-radius: 0.4em 0.4em 0em 0em;    /* radius should be the same as the wrapper */
+}
+</style>
+
+<!-- HTML SECTION -->
+</body>
+
+</html>
